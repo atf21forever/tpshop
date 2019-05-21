@@ -110,7 +110,11 @@ public function delete1(){
 
 }
 
+public function comments(){
 
+echo "sacava";
+$this->display();
+}
 
 
 }
