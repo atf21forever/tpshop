@@ -22,7 +22,7 @@
     <div class="ng-scope PB50">
         <img src="/Public/Home/img/cs_001.jpg" class="img-responsive" alt="">
         <div class="borderleft5o">在线留言<span> (12小时内回复)</span></div>
-       <form action="" method="post">
+       <form action="" method="get">
         <div class="comment-box">
             <div class="box">
                 <label>所在大厦：</label>
@@ -41,7 +41,7 @@
                 <textarea class="aui-Address-box-textarea" name="text" placeholder="留言内容"></textarea>
             </div>
             <div class="box">
-                <div style="text-align:center;"><a href="<?php echo U(comments);?>" class="btnSubmit">提 交</a></div>
+                <div style="text-align:center;"><a href="<?php echo U(comments1);?>" class="btnSubmit">提 交</a></div>
             </div>
         </div>
       </form>

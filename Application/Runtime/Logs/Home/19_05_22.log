@@ -1,0 +1,12 @@
+[ 2019-05-22T12:08:03+08:00 ] 127.0.0.1 /index.php/home/index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2019-05-22T12:08:04+08:00 ] 127.0.0.1 /index.php/home/index/js/index.js
+ERR: 非法操作:js
+
+[ 2019-05-22T12:09:10+08:00 ] 127.0.0.1 /index.php/home/index/shop.html
+ERR: 非法操作:shop
+
+[ 2019-05-22T12:10:08+08:00 ] 127.0.0.1 /index.php/home/index/shop.html
+ERR: 非法操作:shop
+

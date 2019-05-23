@@ -111,11 +111,16 @@ public function delete1(){
 }
 
 public function comments(){
+ 
 
-echo "sacava";
 $this->display();
 }
 
+public function comments1(){
+$name=I('get.name');
+
+var_dump($name);
+}
 
 }
 
