@@ -1,0 +1,45 @@
+[ 2019-05-20T08:48:35+08:00 ] 127.0.0.1 /index.php/home/index/js/index.js
+ERR: 非法操作:js
+
+[ 2019-05-20T08:48:35+08:00 ] 127.0.0.1 /index.php/home/index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2019-05-20T08:48:37+08:00 ] 127.0.0.1 /index.php/home/index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2019-05-20T08:48:37+08:00 ] 127.0.0.1 /index.php/home/index/js/index.js
+ERR: 非法操作:js
+
+[ 2019-05-20T08:49:12+08:00 ] 127.0.0.1 /index.php/home/index/shop.html
+ERR: 非法操作:shop
+
+[ 2019-05-20T19:03:09+08:00 ] 127.0.0.1 /index.php/home/index/U('delete?id=$vo.id%27)
+ERR: 非法操作:U('delete
+
+[ 2019-05-20T19:04:17+08:00 ] 127.0.0.1 /index.php/home/index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2019-05-20T19:04:17+08:00 ] 127.0.0.1 /index.php/home/index/js/jquery.min.js
+ERR: 非法操作:js
+
+[ 2019-05-20T19:04:17+08:00 ] 127.0.0.1 /index.php/home/index/js/index.js
+ERR: 非法操作:js
+
+[ 2019-05-20T19:04:17+08:00 ] 127.0.0.1 /index.php/home/index/js/index.js
+ERR: 非法操作:js
+
+[ 2019-05-20T19:04:19+08:00 ] 127.0.0.1 /index.php/home/index/U('delete?id=$vo.id%27)
+ERR: 非法操作:U('delete
+
+[ 2019-05-20T19:32:54+08:00 ] 127.0.0.1 /index.php/home/index/order.html
+ERR: XML标签语法错误 : name==$vo.cancel 
+
+[ 2019-05-20T19:33:01+08:00 ] 127.0.0.1 /index.php/home/index/order.html
+ERR: XML标签语法错误 : name=$vo.cancel 
+
+[ 2019-05-20T19:33:11+08:00 ] 127.0.0.1 /index.php/home/index/order.html
+ERR: XML标签语法错误 : name={$vo.cancel} 
+
+[ 2019-05-20T19:33:45+08:00 ] 127.0.0.1 /index.php/home/index/order.html
+ERR: XML标签语法错误 : name=$cancel 
+
