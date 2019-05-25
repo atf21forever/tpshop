@@ -123,6 +123,7 @@ $name=I('get.name');
 var_dump($name);
 }
 
+
 public function tof(){
 $all=M('tp_tof')->where('id','>','0')->select();
 //var_dump($all);
@@ -131,10 +132,6 @@ $this->assign('all',$all);
 $this->display();
 
 }
-
-
-
-
 
 
 
