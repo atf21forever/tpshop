@@ -9,7 +9,7 @@ public function index(){
   $name=$data['name'];
   $pass=$data['pass']; 
 
- $add=M('tp_regis')->where("name='$name'")->find();
+ $add=M('regis')->where("name='$name'")->find();
  
  if($add){
       
@@ -50,13 +50,13 @@ public function regis(){
 
   $data['name']=I('post.name');
   $name=$data['name'];
-  $add=M('tp_regis')->where('name','=','$name')->find();
+  $add=M('regis')->where('name','=','$name')->find();
 
 if($add){
 
   $data['name']=I('post.name');
   $data['pass']=I('post.pass');
-  M('tp_regis')->add($data);	
+  M('regis')->add($data);
   $this->display('login');
  
 
@@ -77,8 +77,8 @@ public function member(){
 
 public function order(){
 
- $all=M('tp_order')->where('id','>','0')->select();
- $add=M('tp_takeout')->where('id','>','0')->select();
+ $all=M('order')->where('id','>','0')->select();
+ $add=M('takeout')->where('id','>','0')->select();
 // var_dump($all);
  
  $this->assign('all',$all);
@@ -93,7 +93,7 @@ public function delete(){
  
   $id=I('get.id');
   
- M('tp_order')->where('id','=',$id)->delete();
+ M('order')->where('id','=',$id)->delete();
  
  $this->display('order'); 
 
@@ -104,7 +104,7 @@ public function delete1(){
 
   $id=I('get.id');
   
- M('tp_order')->where('id','=',$id)->delete();
+ M('order')->where('id','=',$id)->delete();
  
  $this->display('order'); 
 
@@ -124,7 +124,7 @@ var_dump($name);
 }
 
 public function tof(){
-$all=M('tp_tof')->where('id','>','0')->select();
+$all=M('tof')->where('id','>','0')->select();
 //var_dump($all);
 $this->assign('all',$all);
 
