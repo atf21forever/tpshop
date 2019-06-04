@@ -31,11 +31,12 @@ class TypeController extends Controller {
                 }
             }
         }
+        $goods=M('goods')->field('pic,goods_name,price,send_point')->select();#查询goods表中的指定字段,field中的内容为一个字符串,多个字段之间逗号隔开
         S('typelist', $data);
-        $this->assign('data',$data);
+        $this->assign(['data'=>$data,'goods'=>$goods]);
         $this->display();
-
-
-
     }
+
+
+
 }

@@ -13,266 +13,45 @@
         <div class="content ng-scope">
             <aside style="height:663px">
                 <ul id="aside">
-                    <foreach name="data" item="v1" key="k">
-                        <if condition="$v1[id] eq 9">
+                    <foreach name="data" item="v" key="k">
+                        <if condition="$v.id gt 8">
                             <script>
                                 $('.table').addClass('active')
                             </script>
-
                         </if>
-                        <li class="table" data-cid="{$v1['id']}" data-ident="1">
-                            <p>{$v1['type_name']}</p>
+                        <li class="table" data-cid="{$v['id']}" data-ident="2">
+                            <p>{$v['type_name']}</p>
                         </li>
                     </foreach>
-                    <!--<li class="table active" data-cid="3" data-ident="1">-->
-                        <!--<p>食品</p>-->
-                    <!--</li>-->
-                    <!--<li class="table" data-cid="4" data-ident="1">-->
-                        <!--<p>饮品</p>-->
-                    <!--</li>-->
-                    <!--<li class="table" data-cid="5" data-ident="0">-->
-                        <!--<p>雪糕</p>-->
-                    <!--</li>-->
-
                 </ul>
             </aside>
-            <!-- 食品 -->
-            <div class="cate show" id="cate_3">
-                <div class="con">
-                    <img class="banner" src="/Public/Home/img/cate/sushi.jpg" alt="">
-                    <ul>
-                        <li data-cid="301" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up1.jpg" alt="">
-                            <p>面包/糕点</p>
-                        </li>
-                        <li data-cid="302" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up2.jpg" alt="">
-                            <p>方便面</p>
-                        </li>
-                        <li data-cid="303" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up3.jpg" alt="">
-                            <p>八宝粥</p>
-                        </li>
-                        <li data-cid="304" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up4.jpg" alt="">
-                            <p>卤蛋/火腿</p>
-                        </li>
-                        <li data-cid="305" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up5.jpg" alt="">
-                            <p>休闲食品</p>
-                        </li>
-                        <li data-cid="306" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up6.jpg" alt="">
-                            <p>口香糖</p>
-                        </li>
-                        <li data-cid="307" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up7.jpg" alt="">
-                            <p>辣味</p>
-                        </li>
-                        <li data-cid="308" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up8.jpg" alt="">
-                            <p>1元专区</p>
-                        </li>
-                        <li data-cid="309" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up9.jpg" alt="">
-                            <p>进口食品</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- 饮品 -->
-            <div class="cate hide" id="cate_4">
-                <div class="con">
-                    <img class="banner" src="/Public/Home/img/cate/yinpin.jpg" alt="">
-                    <ul>
-                        <li data-cid="401" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up10.jpg" alt="">
-                            <p>奶类</p>
-                        </li>
-                        <li data-cid="402" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up11.jpg" alt="">
-                            <p>碳酸饮料</p>
-                        </li>
-                        <li data-cid="403" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up12.jpg" alt="">
-                            <p>功能饮料</p>
-                        </li>
-                        <li data-cid="404" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up13.jpg" alt="">
-                            <p>饮用水</p>
-                        </li>
-                        <li data-cid="405" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up14.jpg" alt="">
-                            <p>茶饮/料</p>
-                        </li>
-                        <li data-cid="406" data-ident="0">
-                            <img class="banner" src="/Public/Home/img/cate/up15.jpg" alt="">
-                            <p>热销饮料</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- 雪糕 -->
-            <div class="cate hide" id="cate_5">
-                <div class="con con_no">
-                    <ul></ul>
-                </div>
-            </div>
-
-            <!--分类下的具体商品详情开始-->
             <section>
-                <ul id="lists_301" class="lists hide">
-                    <li price="6.80">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up11.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">奥利奥双心脆威化饼87克</p>
-                            <p class="price">￥6.80</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li price="2.48">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up2.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">博味火鸡面香辣味80克</p>
-                            <p class="price">￥2.48</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul id="lists_401" class="lists hide">
-                    <li price="6.80">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up11.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">奥利奥双心脆威化饼87克</p>
-                            <p class="price">￥6.80</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li price="2.48">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up2.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">博味火鸡面香辣味80克</p>
-                            <p class="price">￥2.48</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul id="lists_402" class="lists hide">
-                    <li price="6.80">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up11.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">奥利奥双心脆威化饼87克</p>
-                            <p class="price">￥6.80</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li price="2.48">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up2.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">博味火鸡面香辣味80克</p>
-                            <p class="price">￥2.48</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul id="lists_5" class="lists hide">
-                    <li price="6.80">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up11.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">奥利奥双心脆威化饼87克</p>
-                            <p class="price">￥6.80</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li price="2.48">
-                        <div class="l view">
-                            <a href="proDetail.html" target="_blank"><img src="/Public/Home/img/lists/up2.jpg" class="img-responsive" alt="..." /></a>
-                        </div>
-                        <div class="r">
-                            <p class="t">博味火鸡面香辣味80克</p>
-                            <p class="price">￥2.48</p>
-                            <div class="jifen">送积分：0</div>
-                            <div class="showaddcart">
-                                <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
-                                <div class="num_con">
-                                    <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
-                                    <span class="number">0</span>
-                                    <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <foreach name="data" item="v" key="k1">
+                    <foreach  name="goods" item="g" key="k2">
+                        <if condition="g.pid eq v.id">
+                            <ul id="lists_{$v[id]}" class="lists hide">
+                                <li price="{$g.price}">
+                                    <div class="l view">
+                                        <a href="proDetail.html" target="_blank"><img src="/Public/Home/uploads/goods/{$g.pic}" class="img-responsive" alt="..." /></a>
+                                    </div>
+                                    <div class="r">
+                                        <p class="t">{$g.goods_name}</p>
+                                        <p class="price">￥{$g.price}</p>
+                                        <div class="jifen">送积分：{$g.send_point}</div>
+                                        <div class="showaddcart">
+                                            <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
+                                            <div class="num_con">
+                                                <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
+                                                <span class="number">0</span>
+                                                <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </if>
+                    </foreach>
+                </foreach>
             </section>
             <!--分类下的具体商品详情结束-->
             <div class="clear"></div>
