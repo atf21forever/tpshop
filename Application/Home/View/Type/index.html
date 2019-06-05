@@ -1,3 +1,4 @@
+
 ﻿<!DOCTYPE html>
 <html>
 <head>
@@ -60,3 +61,67 @@
     <include file="common:cart_ng_scope"/>
 </body>
 </html>
+
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <include file="common:header"/>
+    <title>懒虫商城-超市</title>
+    <link rel="stylesheet" type="text/css" href="css/response.css" />
+</head>
+<body>
+    <div class="ng-scope">
+        <!--蓝坤大厦地址栏显示-->
+        <include file="common:loca"/>
+        <!--蓝坤大厦地址栏显示-->
+        <div class="content ng-scope">
+            <aside style="height:663px">
+                <ul id="aside">
+                    <foreach name="data" item="v" key="k">
+                        <if condition="$v.id gt 8">
+                            <script>
+                                $('.table').addClass('active')
+                            </script>
+                        </if>
+                        <li class="table" data-cid="{$v['id']}" data-ident="2">
+                            <p>{$v['type_name']}</p>
+                        </li>
+                    </foreach>
+                </ul>
+            </aside>
+            <section>
+                <foreach name="data" item="v" key="k1">
+                    <foreach  name="goods" item="g" key="k2">
+                        <if condition="g.pid eq v.id">
+                            <ul id="lists_{$v[id]}" class="lists hide">
+                                <li price="{$g.price}">
+                                    <div class="l view">
+                                        <a href="proDetail.html" target="_blank"><img src="/Public/Home/uploads/goods/{$g.pic}" class="img-responsive" alt="..." /></a>
+                                    </div>
+                                    <div class="r">
+                                        <p class="t">{$g.goods_name}</p>
+                                        <p class="price">￥{$g.price}</p>
+                                        <div class="jifen">送积分：{$g.send_point}</div>
+                                        <div class="showaddcart">
+                                            <img src="/Public/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
+                                            <div class="num_con">
+                                                <img src="/Public/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
+                                                <span class="number">0</span>
+                                                <img src="/Public/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </if>
+                    </foreach>
+                </foreach>
+            </section>
+            <!--分类下的具体商品详情结束-->
+            <div class="clear"></div>
+        </div>
+    </div>
+    <include file="common:cart_ng_scope"/>
+</body>
+</html>
+

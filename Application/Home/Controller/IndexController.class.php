@@ -10,9 +10,13 @@ class IndexController extends Controller {
   $pass=$data['pass']; 
 
 
+
   $add=M('regis')->where("name='$name'")->find();
 
   $add=M('regis')->where("name='$name'")->find();
+
+
+ $add=M('regis')->where("name='$name'")->find();
 
  
  if($add){
@@ -54,25 +58,12 @@ class IndexController extends Controller {
     $name=$data['name'];
     $add=M('tp_regis')->where('name','=','$name')->find();
 
-    $data['name']=I('post.name');
-    $name=$data['name'];
-    $add=M('regis')->where('name','=','$name')->find();
-
-
   if($add){
-
 
     $data['name']=I('post.name');
     $data['pass']=I('post.pass');
     M('tp_regis')->add($data);	
     $this->display('login');
-
-    $data['name']=I('post.name');
-    $data['pass']=I('post.pass');
-    M('regis')->add($data);
-    $this->display('login');
- 
-
 
     }else{
     $this->display('register');
@@ -102,17 +93,14 @@ class IndexController extends Controller {
 
   }
 
-
-  public function delete(){
-   
-     $id=I('get.id');
-      
-     M('order')->where('id','=',$id)->delete();
-     
-     $this->display('order'); 
-  }
-
-
+public function delete(){
+ 
+  $id=I('get.id');
+  
+ M('order')->where('id','=',$id)->delete();
+ 
+ $this->display('order'); 
+    }
 
   public function delete1(){
 
@@ -121,12 +109,6 @@ class IndexController extends Controller {
       
      M('order')->where('id','=',$id)->delete();
      
-     $this->display('order'); 
-
-     $id=I('get.id');
-  
-     M('order')->where('id','=',$id)->delete();
- 
      $this->display('order'); 
 
 
@@ -141,6 +123,7 @@ class IndexController extends Controller {
 
 //用户咨询
   public function comments1(){
+
 
     // $name=I('get.name');
     $data['name']=I('get.name');
