@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Title here -->
+    <title>懒虫商城-水果</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="懒虫商城" />
+    <meta name="keywords" content="懒虫商城" />
+    <meta name="author" content="懒虫商城" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="__PUBLIC__/Home/__PUBLIC__/Home/img/ico/favicon.ico" type="image/x-icon">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/response.css" />
+    <!-- jQuery -->
+    <script src="__PUBLIC__/Home/js/jquery.js" type="text/javascript"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="__PUBLIC__/Home/js/custom.js"></script>
+</head>
+<body>
+
+<div class="ng-scope">
+    <div class="loca ng-scope">
+        <a class="change ng-binding" href="address.html">蓝坤大厦<span>[切换]</span></a>
+    </div>
+    <div class="content ng-scope">
+        <aside style="height:663px">
+            <ul id="aside">
+                <li class="table active" data-cid="100" data-ident="0">
+                    <p>新品</p>
+                </li>
+                <li class="table" data-cid="200" data-ident="0">
+                    <p>热卖</p>
+                </li>
+
+                <!--所有水果-->
+                <foreach name="res" item="vo_res">
+                    <li class="table" data-cid="{$vo_res['id']}" data-ident="0">
+                        <p>{$vo_res['fruits_names']}</p>
+                    </li>
+                </foreach>
+
+            </ul>
+        </aside>
+
+
+        <section>
+            <!--新品-->
+            <ul id="lists_100" class="lists">
+                <foreach name="new" item="vo_new">
+                    <li price="{$vo_new['sale']}">
+                        <div class="l view">
+                            <a href="proDetail.html" target="_blank"><img src="__PUBLIC__/Home/img/fruits/{$vo_new['pic']}" class="img-responsive" alt="..." /></a>
+                        </div>
+                        <div class="r">
+                            <p class="t">{$vo_new['fruits_names']}</p>
+                            <p class="price">￥{$vo_new['sale']}</p>
+                            <div class="jifen">原价:￥{$vo_new['price']}</div>
+                            <div class="showaddcart">
+                                <img src="__PUBLIC__/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
+                                <div class="num_con">
+                                    <img src="__PUBLIC__/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
+                                    <span class="number">0</span>
+                                    <img src="__PUBLIC__/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </foreach>
+            </ul>
+
+            <!--热卖-->
+            <ul id="lists_200" class="lists hide">
+                <foreach name="hot" item="vo_hot">
+                    <li price="{$vo_hot['sale']}">
+                        <div class="l view">
+                            <a href="proDetail.html" target="_blank"><img src="__PUBLIC__/Home/img/fruits/{$vo_hot['pic']}" class="img-responsive" alt="..." /></a>
+                        </div>
+                        <div class="r">
+                            <p class="t">{$vo_hot['fruit_names']}</p>
+                            <p class="price">￥{$vo_hot['sale']}</p>
+                            <div class="jifen">原件：￥{$vo_hot['price']}</div>
+                            <div class="showaddcart">
+                                <img src="__PUBLIC__/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
+                                <div class="num_con">
+                                    <img src="__PUBLIC__/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
+                                    <span class="number">0</span>
+                                    <img src="__PUBLIC__/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </foreach>
+
+            </ul>
+
+
+
+
+
+            <!--所有水果-->
+            <foreach name="res" item="vo_res">
+                <ul id="lists_{$vo_res['id']}" class="lists hide">
+                    <li price="{$vo_res['sale']}">
+                        <div class="l view">
+                            <a href="proDetail.html" target="_blank"><img src="__PUBLIC__/Home/img/fruits/{$vo_res['pic']}" class="img-responsive" alt="..." /></a>
+                        </div>
+                        <div class="r">
+                            <p class="t">{$vo_res['fruits_names']}</p>
+                            <p class="price">￥{$vo_res['sale']}</p>
+                            <div class="jifen">原件:￥{$vo_res['price']}</div>
+                            <div class="showaddcart">
+                                <img src="__PUBLIC__/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
+                                <div class="num_con">
+                                    <img src="__PUBLIC__/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
+                                    <span class="number">0</span>
+                                    <img src="__PUBLIC__/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </foreach>
+
+        </section>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--底部结算导航-->
+<div class="cart ng-scope">
+    <div class="r"><a href="cart.html">去结算</a></div>
+    <div class="l ng-binding">
+        ￥<label id="totalmoney">0</label>
+    </div>
+    <i id="totalcartnumber" class="ng-binding cartnum">0</i>
+    <a href="cart.html"><img src="__PUBLIC__/Home/img/shop_cart01.png" alt="..."></a>
+</div>
+<!--/底部结算导航-->
+</body>
+</html>
