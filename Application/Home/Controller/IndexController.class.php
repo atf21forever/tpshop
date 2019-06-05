@@ -9,7 +9,11 @@ class IndexController extends Controller {
   $name=$data['name'];
   $pass=$data['pass']; 
 
-  $add=M('tp_regis')->where("name='$name'")->find();
+
+  $add=M('regis')->where("name='$name'")->find();
+
+  $add=M('regis')->where("name='$name'")->find();
+
  
  if($add){
   
@@ -45,16 +49,30 @@ class IndexController extends Controller {
 //注册页面
   public function regis(){
 
+
     $data['name']=I('post.name');
     $name=$data['name'];
     $add=M('tp_regis')->where('name','=','$name')->find();
 
+    $data['name']=I('post.name');
+    $name=$data['name'];
+    $add=M('regis')->where('name','=','$name')->find();
+
+
   if($add){
+
 
     $data['name']=I('post.name');
     $data['pass']=I('post.pass');
     M('tp_regis')->add($data);	
     $this->display('login');
+
+    $data['name']=I('post.name');
+    $data['pass']=I('post.pass');
+    M('regis')->add($data);
+    $this->display('login');
+ 
+
 
     }else{
     $this->display('register');
@@ -67,14 +85,16 @@ class IndexController extends Controller {
 //我的页面
   public function member(){
 
+
   	$this->display();
   	 
   }
 
+
   public function order(){
 
-     $all=M('tp_order')->where('id','>','0')->select();
-     $add=M('tp_takeout')->where('id','>','0')->select();
+     $all=M('order')->where('id','>','0')->select();
+     $add=M('takeout')->where('id','>','0')->select();
     // var_dump($all);
      $this->assign('all',$all);
      $this->assign('add',$add);
@@ -82,24 +102,33 @@ class IndexController extends Controller {
 
   }
 
+
   public function delete(){
    
      $id=I('get.id');
       
-     M('tp_order')->where('id','=',$id)->delete();
+     M('order')->where('id','=',$id)->delete();
      
      $this->display('order'); 
-
-
   }
+
+
 
   public function delete1(){
 
+
      $id=I('get.id');
       
-     M('tp_order')->where('id','=',$id)->delete();
+     M('order')->where('id','=',$id)->delete();
      
      $this->display('order'); 
+
+     $id=I('get.id');
+  
+     M('order')->where('id','=',$id)->delete();
+ 
+     $this->display('order'); 
+
 
   }
 //用户咨询
@@ -118,15 +147,16 @@ class IndexController extends Controller {
     $data['phone']=I('get.phone');
     $data['location']=I('get.location');
     $data['text']=I('get.text');
-    M('tp_comment')->add($data);
+    M('comment')->add($data);
     
     $this->display('comments');
   }
 
 
+
 //外卖页面
   public function tof(){
-    $all=M('tp_tof')->where('id','>','0')->select();
+    $all=M('tof')->where('id','>','0')->select();
     //var_dump($all);
     $this->assign('all',$all);
 
@@ -140,7 +170,7 @@ class IndexController extends Controller {
    
     // $this->display();
 
-  $all=M('tp_address')->where('id','>',0)->select();
+  $all=M('address')->where('id','>',0)->select();
 
   // var_dump($all);
   $this->assign('all',$all);
@@ -160,7 +190,7 @@ class IndexController extends Controller {
     $selected1 = I('get.selected1');
     $selected= I('get.selected');
     $fang = I('get.fang');
-    M('tp_address')->where('id','=','id')->data(array('name'=>$name,'phone'=>$phone,
+    M('address')->where('id','=','id')->data(array('name'=>$name,'phone'=>$phone,
     'selected1'=>I('get.selected1'),'fang'=>$fang))->save();
     
     $this->display('edit_address');
