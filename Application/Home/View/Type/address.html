@@ -12,7 +12,7 @@
             <div class="addr">
                 <p style="color:#FA2C2A" class="ng-binding">收货地址：共和丰大厦</p>
                 <p style="font-size:12px;color:#666" class="ng-binding">收货人：{$v.name} {$v.phone} </p>
-                <p style="font-size:12px;color:#666" class="ng-binding">详细地址：共和丰大厦 {$v.selected1} {$v.fang}</p>
+                <p style="font-size:12px;color:#666" class="ng-binding">详细地址：共和丰大厦 {$v.dong}{$v.selected1} {$v.fang}号</p>
                 <p class="edit"><a href="{:U('edit_address','id='.$v['id'])}">修改</a></p>
             </div>
         </foreach>
