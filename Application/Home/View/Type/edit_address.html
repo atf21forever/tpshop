@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <include file="common:header"/>
+    <title>懒虫商城-结算--修改收货地址</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/response.css" />
+</head>
+<body style="background:#F5F5F5;">
+<foreach name="all" item="e">
+    <form action="{:U('edit_address',['id'=>$e['id']])}" method="post">
+        <div class="ng-scope">
+            <div class="btn btn-default add_addr_title">修改收货地址</div>
+            <div class="addr_con">
+                <div class="add_addr_dasha">蓝坤大厦</div>
+                <input class="aui-Address-box-input" id="name" placeholder="姓名或者昵称" type="text" name="name" value="{$e['name']}">
+                <input class="aui-Address-box-input" id="phone" placeholder="手机号码" type="text" name="phone" value="{$e['phone']}">
+                <select class="aui-Address-box-select"  name="dong" id="dong">
+                    <option selected="selected" value="" >选择栋</option>
+                    <option value="A" {$e["dong"]=='A栋'?"selected":""} >A栋</option>
+                    <option value="B" {$e["dong"]=='B栋'?"selected":""}>B栋</option>
+                    <option value="C" {$e["dong"]=='C栋'?"selected":""}>C栋</option>
+                    <option value="D" {$e["dong"]=='D栋'?"selected":""}>D栋</option>
+                    <option value="E" {$e["dong"]=='E栋'?"selected":""}>E栋</option>
+                    <option value="F" {$e["dong"]=='F栋'?"selected":""}>F栋</option>
+                    <option value="G" {$e["dong"]=='G栋'?"selected":""}>G栋</option>
+                </select>
+                <select class="aui-Address-box-select" id="ceng" name="selected1">
+                    <option selected="selected" value="">选择层</option>
+                    <option value="1层"  {$e["selected1"]=='1层'?"selected":""}>1层</option>
+                    <option value="2层"  {$e["selected1"]=='2层'?"selected":""}>2层</option>
+                    <option value="3层"  {$e["selected1"]=='3层'?"selected":""}>3层</option>
+                    <option value="4层"  {$e["selected1"]=='4层'?"selected":""}>4层</option>
+                    <option value="5层"  {$e["selected1"]=='5层'?"selected":""}>5层</option>
+                    <option value="6层"  {$e["selected1"]=='6层'?"selected":""}>6层</option>
+                    <option value="7层"  {$e["selected1"]=='7层'?"selected":""}>7层</option>
+                    <option value="8层"  {$e["selected1"]=='8层'?"selected":""}>8层</option>
+                    <option value="9层"  {$e["selected1"]=='9层'?"selected":""}>9层</option>
+                    <option value="10层"  {$e["selected1"]=='10层'?"selected":""}>10层</option>
+                    <option value="11层"  {$e["selected1"]=='11层'?"selected":""}>11层</option>
+                    <option value="12层"  {$e["selected1"]=='12层'?"selected":""}>12层</option>
+                    <option value="13层"  {$e["selected1"]=='13层'?"selected":""}>13层</option>
+                </select>
+                <input class="aui-Address-box-input" id="fang" placeholder="房间号" type="text" name="fang" value="{$e['fang']}">
+                <input type="submit" class="red-color" id="btnSave" value="提交"/>
+                <!-- <a href="javascript:;" class="red-color" id="btnSave">保 存</a> -->
+            </div>
+        </div>
+
+        <!--dialog-->
+        <div id="_alert_" class="weui_dialog_alert hide">
+            <div class="weui_mask"></div>
+            <div class="weui_dialog">
+                <div class="weui_dialog_hd"><strong class="weui_dialog_title" id="alert-title"></strong></div>
+                <div class="weui_dialog_bd" id="alert-msg"></div>
+                <div class="weui_dialog_ft">
+                    <a href="javascript:;" class="weui_btn_dialog primary" onclick="weui_dialog_close()">确定</a>
+                </div>
+            </div>
+        </div>
+</foreach>
+
+</body>
+</html>

@@ -3,37 +3,32 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
   public function index(){
-  
+
   $data['name']=I('post.name');
   $data['pass']=I('post.pass');
   $name=$data['name'];
-  $pass=$data['pass']; 
+  $pass=$data['pass'];
 
 
 
   $add=M('regis')->where("name='$name'")->find();
 
-  $add=M('regis')->where("name='$name'")->find();
 
-
- $add=M('regis')->where("name='$name'")->find();
-
- 
  if($add){
-  
+
     if($pass==$add['pass']){
-  
+
   	    $this->display();
-  
+
      }else{
-     
+
         $this->display('login');
      }
 
  }else{
- 
+
     $this->display('login');
- 
+
  }
 
 }
