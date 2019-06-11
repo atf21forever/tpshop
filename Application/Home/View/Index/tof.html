@@ -13,8 +13,9 @@
     <link rel="shortcut icon" href="Images/ico/favicon.ico" type="image/x-icon">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/style.css" />   
+
     <!-- jQuery -->
-    <script type="text/javascript" src="__PUBLIC__/Home/js/script.js"></script>
+    
     <script src="__PUBLIC__/Home/js/jquery.js" type="text/javascript"></script>
     <!-- Custom JS -->
     <script type="text/javascript" src="__PUBLIC__/Home/js/custom.js"></script>
@@ -24,25 +25,33 @@
 </head>
 
 <body style="position:relative;">
-    <div class="ng-scope">
+    <form action="cart" method="get">
+      <div class="ng-scope">
         <div class="loca ng-scope">
             <a class="change ng-binding" href="address.html">蓝坤大厦<span>[切换]</span></a>
         </div>
         <div class="ng-scope">
             <img src="__PUBLIC__/Home/img/tof/timg-6.jpg" width="100%">
         </div>
+        
         <ul class="lists lists-tof ng-scope">
   
            <foreach name='all' item='v' key='k' >
-            <li class="on" price="20" cart="2">
+            <li class="on" price="{$v.price}" cart="2">
                 <div class="img view"><img src="__PUBLIC__/Home/img/tof/{$v.src}" alt="..." /></div>
                 <p class="t">{$v.name}</p>
                 <p class="price">￥{$v.price}</p>
                 <div class="showaddcart meshop">
                     <div class="num_con">
-                        <img src="__PUBLIC__/Home/img/num_l.png" class="img-responsive num_l" alt="...">
-                        <span class="number" name="count">0</span>
-                        <img src="__PUBLIC__/Home/img/num_r.png" class="img-responsive num_r" alt="...">
+                        <img src="__PUBLIC__/Home/img/num_l.png" class="img-responsive num_l" alt="..." onclick="one({$v['id']})"/>
+                        <span class="number"  id="num_{$v['id']}">0 </span>
+                        
+                        <input type="hidden" name="numnew" value=""/>
+                        
+                        <input type="hidden" name="newid" value=""/>
+                        
+                        <img src="__PUBLIC__/Home/img/num_r.png" class="img-responsive num_r" alt="..." onclick="two({$v['id']})"/>
+                    
                     </div>
                 </div>
                 <div class="detail">
@@ -58,11 +67,15 @@
           </foreach>    
           
         </ul>
-    </div>
-    <!--底部结算导航-->
+      </div>
+
     
+    <!--底部结算导航-->
+     
     <div class="cart ng-scope">
-        <div class="r"><a href="{:U('cart',array('id'=>12))}">去结算</a></div>
+          <div class="r"><!--<a href='#' id="three" >去结算</a>-->
+        <input type="submit" value="去结算" id="three"/>
+          </div> 
         <div class="l ng-binding">
             ￥<label id="totalmoney" name="count1">0</label>
         </div>
@@ -70,10 +83,37 @@
         <a href="cart.html"><img src="__PUBLIC__/Home/img/shop_cart01.png" alt="..."></a>
     </div>
     <!--/底部结算导航-->
- 
+  </form>
 </body>
 </html>
 <script type="text/javascript">
-   all=$("label#totalmoney").text();
-   console.log(all);
+  //减操作
+  function one(id){
+    var id = id;
+    var sub=$('#num_'+ id).text();
+        
+    console.log(sub)
+    var pid = id;
+    console.log(pid)
+
+  }
+  //加操作
+  function two(id){   
+    var id = id;
+    var plus=$('#num_' + id).text();
+    
+    plus=parseInt(plus) +parseInt(1);
+    $('input[name="numnew"]').val(plus);
+    $('input[name="newid"]').val(id);
+    ni = $('input[name="numnew"]').attr('value');
+    
+    nid = $('input[name="newid"]').attr('value');
+    console.log(nid);
+
+  }
+ 
+
+
+
+
 </script>

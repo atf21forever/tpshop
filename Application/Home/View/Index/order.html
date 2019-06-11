@@ -84,14 +84,14 @@
                            <div class="r">
                                <p class="t">{$v.name}</p>
                                <p class="money">￥{$v.price}</p>
-                               <p class="jf">送积分：0</p>
+                              
                            </div>
                        </li>
                    </ul>
                    
                    <div class="bottom">
-                       <p>总计：￥{$v.price} 元  积分抵扣：￥0.00 元</p>
-                       <p class="money">实付：￥16.00元</p>
+                       <p>总计：￥{$v.price} 元  </p>
+                       <p class="money">实付：{$v.price}元</p>
                        <a href="{:U('delete1',['id'=>$v['id']])}">删除记录</a>
                    </div>
                </li>

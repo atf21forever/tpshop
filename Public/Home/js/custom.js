@@ -90,7 +90,7 @@ $(document).ready(function () {
         $(objLi).find(".num_r").click(function () {
             var number = parseInt($(objLi).find(".number").text()) + 1;
             $(objLi).find(".number").text(number);
-
+             
             CountNumPrice();
         });
         //点击查看产品详情
@@ -168,6 +168,7 @@ function CountNumPrice() {
     });
     $("#totalcartnumber").text(totalcartnumber);
     $("#totalmoney").text(totalmoney.toFixed(2));
+    
 }
 //shop：关闭产品详情
 function CloseDetail(obj) {
