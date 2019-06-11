@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <include file="common:header"/>
+    <title>懒虫商城-结算</title>
+    <!--<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/response.css" />-->
+</head>
+<body>
+    <div class="ng-scope">
+        <!--购物车空提示-->
+        <div class="cartempty ng-scope ng-hide">
+                <h3>亲，购物车空空的呢~</h3>
+                <a href="{:U('index')}">去逛逛</a>
+        </div>
+        <!--/购物车空提示-->
+
+        <div class="cartpay ng-scope ">
+            <div class="take-delivery">
+                <foreach name="all" item="v" key="k"> 
+                <div class="addr">
+                    <p style="color:#FA2C2A" class="ng-binding">收货地址：共和丰大厦</p>
+                    <p style="font-size:12px;color:#666" class="ng-binding">收货人：{$v.name} {$v.phone} </p>
+                    <p style="font-size:12px;color:#666" class="ng-binding">详细地址：共和丰大厦 {$v.dong}{$v.selected1} {$v.fang}号</p>
+                    <!--<p class="edit"><a href="{:U('edit_address','id='.$v['id'])}">修改</a></p> -->
+                    <p class="edit"><a href="{:U('address')}">我的</a></p>
+                </div>
+                </foreach>
+                <div class="yujibox">
+                    <div style="width:25%;float:left;margin-left:30px;color:#666;font-size:0.3rem">送达时间：{:date('H:i',strtotime("+30 minutes"))}</div>
+                    <div style="width:60%;float:left;color:#888;font-size:12px">预计30分钟</div>
+                </div>
+                <div class="remarkbox">
+                    <span style="width:20%;float:left;margin-left:30px;color:#666;font-size:14px">留言：</span>
+                    <input class="input remark ng-pristine ng-untouched ng-valid ng-empty" placeholder="点此输入留言" type="text">
+                </div>
+                <a class="btn btn-default add_addr" href="{:U('add_address')}">添加收货地址</a>
+            </div>
+            <section class="prolist_section">
+                <ul id=" prolist" class="lists">
+                    <foreach name="goods" item="g" >
+                        <li price="{$g['price']}" class="on" cart="1">
+                            <div class="l">
+                                <a href="#" target="_blank"><img src="__PUBLIC__/Home/uploads/goods/{$g['pic']}" class="img-responsive" alt="..." /></a>
+                            </div>
+                            <div class="r">
+                                <p class="t">{$g['goods_name']}</p>
+                                <p class="price">￥{$g['price']}</p>
+                                <div class="jifen">送积分：{$g['send_point']}</div>
+                                <div class="showaddcart">
+                                    <div class="num_con">
+                                        <img src="__PUBLIC__/Home/img/num_l.png" class="img-responsive num_l" alt="..." />
+                                        <span class="number">1</span>
+                                        <img src="__PUBLIC__/Home/img/num_r.png" class="img-responsive num_r" alt="..." />
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </foreach>
+            </section>
+            <!--底部结算导航-->
+            <div class="cart ng-scope">
+                <div class="r"><a href="javascript:;">提交订单</a></div>
+                <div class="l ng-binding c">
+                    ￥<label id="totalmoney">5.46</label>
+                    <span class="font11 points">本次消费获得积分：0</span>
+                </div>
+            </div>
+            <!--/底部结算导航-->
+        </div>
+    </div>
+</body>
+</html>

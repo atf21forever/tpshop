@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <include file="common:header"/>
+    <title>懒虫商城-商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/response.css" />
+</head>
+<body>
+    <div class="ng-scope">
+        <div class="loca ng-scope">
+            <a class="change ng-binding" href="address.html">蓝坤大厦<span>[切换]</span></a>
+        </div>
+        <div class="content ng-scope">
+            <aside style="height:663px">
+                <foreach name="data" item="v" key="k">
+                    <li class="table" data-cid="{$v['id']}" data-ident="0">
+                        <p>{$v.type_name}</p>
+                    </li>
+                </foreach>
+
+                <!--全部商品-->
+                <li class="table active" data-cid="66" data-ident="0">
+                    <p>全部商品</p>
+                </li>
+                </ul>
+            </aside>
+
+            <!--分类下的具体商品详情开始-->
+            <section>
+                <foreach  name="data" item="vv" key="k1">
+                    <ul id="lists_{$vv['id']}" class="lists hide">
+                        <foreach  name="goods" item="gs" key="k2">
+                            <if condition="$vv['id'] eq $gs['tid']">
+                                <li price="{$gs['price']}">
+                                    <div class="l view">
+                                        <a href="{:U('proDetail','id='.$gs['id'])}" target="_blank"><img src="__PUBLIC__/Home/uploads/goods/{$gs['pic']}" class="img-responsive" alt="..." /></a>
+                                    </div>
+                                    <div class="r">
+                                        <p class="t">{$gs['goods_name']}</p>
+                                        <p class="price">￥{$gs['price']}</p>
+                                        <div class="jifen">送积分：{$gs['send_point']}</div>
+                                        <div class="showaddcart">
+                                            <img src="__PUBLIC__/Home/img/shop_cart02.png" class="img-responsive join" alt="..." />
+                                            <div class="num_con">
+                                                <img src="__PUBLIC__/Home/img/num_l.png"  gid="{$gs['id']}" class="img-responsive num_l lll" alt="..." />
+                                                <span class="number" id="derail_{$g['id']}">0</span>
+                                                <img src="__PUBLIC__/Home/img/num_r.png"  gid="{$gs['id']}" class="img-responsive num_r rrr" alt="..." />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </if>
+                        </foreach>
+                    </ul>
+                </foreach>
+
+                <!--以下对应的是全部商品-->
+                <ul id="lists_66" class="lists">
+                    <foreach  name="goods" item="g" key="k2">
+                        <li price="{$g['price']}">
+                            <div class="l view">
+                                <a href="{:U('proDetail','id='.$g['id'])}" target="_blank"><img src="__PUBLIC__/Home/uploads/goods/{$g['pic']}" class="img-responsive" alt="..." /></a>
+                            </div>
+                            <div class="r">
+                                <p class="t">{$g['goods_name']}</p>
+                                <p class="price">￥{$g['price']}元</p>
+                                <div class="jifen">送积分：{$g['send_point']}</div>
+                                <div class="showaddcart">
+                                    <img src="__PUBLIC__/Home/img/shop_cart02.png" class="img-responsive join mycart" alt="..." />
+                                    <div class="num_con">
+                                        <img src="__PUBLIC__/Home/img/num_l.png" gid="{$g['id']}" class="img-responsive num_l ll"  alt="..." />
+                                        <span class="number" id="all_{$g['id']}">0</span>
+                                        <img src="__PUBLIC__/Home/img/num_r.png" gid="{$g['id']}" class="img-responsive num_r rr"  alt="..." />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <div class="back" onclick="CloseDetail(this);"><img src="img/close.png" class="img-responsive" alt="..." /></div>
+                                <div class="title">商品详情</div>
+                                <foreach  name="detail_goods" item="gd" key="k3">
+                                    <div class="img"><img src="__PUBLIC__/Home/uploads/goods/{$gd['pic']}" class="img-responsive" alt="..." /></div>
+                                    <div class="desc">{$gd['detail']}</div>
+                                </foreach>
+                            </div>
+                        </li>
+                    </foreach>
+                </ul>
+            </section>
+            <!--分类下的具体商品详情结束-->
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--底部结算导航-->
+    <div class="cart ng-scope">
+        <div class="r"><a href="cart.html">去结算</a></div>
+        <div class="l ng-binding">
+            ￥<label id="totalmoney">0</label>
+        </div>
+        <i id="totalcartnumber" class="ng-binding cartnum">0</i>
+        <a href="cart.html"><img src="img/shop_cart01.png" alt="..."></a>
+    </div>
+    <!--/底部结算导航-->
+</body>
+</html>
